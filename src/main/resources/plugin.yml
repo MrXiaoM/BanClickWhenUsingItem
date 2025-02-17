@@ -2,3 +2,4 @@ name: BanClickWhenUsingItem
 version: '${version}'
 main: top.mrxiaom.fix.BanClickWhenUsingItem
 api-version: 1.13
+folia-supported: true
