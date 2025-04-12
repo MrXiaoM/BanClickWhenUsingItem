@@ -19,13 +19,6 @@ public class NMS {
         put("1.20.2", "v1_20_R2");
         put("1.20.3", "v1_20_R3");
         put("1.20.4", "v1_20_R3");
-        put("1.20.5", "v1_20_R4");
-        put("1.20.6", "v1_20_R4");
-        put("1.21", "v1_21_R1");
-        put("1.21.1", "v1_21_R1");
-        put("1.21.2", "v1_21_R2");
-        put("1.21.3", "v1_21_R2");
-        put("1.21.4", "v1_21_R3");
     }};
 
     public static boolean init(Logger logger) {
@@ -34,7 +27,13 @@ public class NMS {
             if (method.getName().equals("getActiveItem")) {
                 livingEntity = new LivingEntity_Paper();
                 logger.info("Found Paper interface method 'LivingEntity#getActiveItem()'.");
-                logger.info("NMS support 'Paper' loaded!");
+                logger.info("NMS support 'Paper Common' loaded!");
+                return loaded = true;
+            }
+            if (method.getName().equals("getItemInUse")) {
+                livingEntity = new LivingEntity_Spigot();
+                logger.info("Found Spigot interface method 'LivingEntity#getItemInUse()'.");
+                logger.info("NMS support 'Spigot Common' loaded!");
                 return loaded = true;
             }
         }
