@@ -11,7 +11,7 @@ public class LivingEntity_v1_16_R3 implements ILivingEntity {
     @Nullable
     @Override
     public ItemStack getActiveItem(LivingEntity entity) {
-        net.minecraft.server.v1_16_R3.ItemStack nmsItem = ((CraftLivingEntity) entity).getHandle().getActiveItem();
-        return CraftItemStack.asBukkitCopy(nmsItem);
+        net.minecraft.server.v1_16_R3.ItemStack item = ((CraftLivingEntity) entity).getHandle().getActiveItem();
+        return item.isEmpty() ? null : CraftItemStack.asCraftMirror(item);
     }
 }
