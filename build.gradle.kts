@@ -6,7 +6,7 @@ plugins {
 val targetJavaVersion = 8
 allprojects {
     group = "top.mrxiaom"
-    version = "1.0.2"
+    version = "1.0.3"
 
     apply(plugin = "java")
     repositories {
